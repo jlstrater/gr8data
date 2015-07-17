@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.javascript:closure-compiler:v20141023">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.javascript/closure-compiler/v20141023/b0bc533425f44e34210d4ecb57721db329f0cb30/closure-compiler-v20141023.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.javascript/closure-compiler/v20141023/dfda04bf02e7e6aae956e902d3d3cd6b9cafe586/closure-compiler-v20141023-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
