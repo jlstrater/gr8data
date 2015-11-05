@@ -1,4 +1,4 @@
-package gr8ladies.api
+package gr8data
 
 import grails.boot.GrailsApp
 import grails.boot.config.GrailsAutoConfiguration

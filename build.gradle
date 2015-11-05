@@ -8,33 +8,22 @@ buildscript {
     }
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
-        classpath 'com.bertramlabs.plugins:asset-pipeline-gradle:2.1.1'
+        classpath "org.grails.plugins:views-gradle:1.0.0.RC1"
+        classpath "org.grails.plugins:hibernate:4.3.10.7"
     }
 }
 
-plugins {
-    id "io.spring.dependency-management" version "0.5.2.RELEASE"
-}
-
 version "0.1"
-group "gr8ladies.api"
+group "gr8data"
 
-apply plugin: "spring-boot"
-apply plugin: "war"
-apply plugin: "asset-pipeline"
-apply plugin: 'eclipse'
-apply plugin: 'idea'
-apply plugin: "org.grails.grails-web"
-apply plugin: "org.grails.grails-gsp"
+apply plugin:"eclipse"
+apply plugin:"idea"
+apply plugin:"org.grails.grails-web"
+apply plugin:"org.grails.plugins.views-json"
 
 ext {
     grailsVersion = project.grailsVersion
     gradleWrapperVersion = project.gradleWrapperVersion
-}
-
-assets {
-    minifyJs = true
-    minifyCss = true
 }
 
 repositories {
@@ -51,26 +40,26 @@ dependencyManagement {
 
 dependencies {
     compile "org.springframework.boot:spring-boot-starter-logging"
-    compile "org.springframework.boot:spring-boot-starter-actuator"
     compile "org.springframework.boot:spring-boot-autoconfigure"
+    compile "org.grails:grails-core"
+    console "org.grails:grails-console"
+    compile "org.springframework.boot:spring-boot-starter-actuator"
     compile "org.springframework.boot:spring-boot-starter-tomcat"
-    compile "org.grails:grails-dependencies"
+    compile "org.grails:grails-plugin-url-mappings"
+    compile "org.grails:grails-plugin-rest"
+    compile "org.grails:grails-plugin-interceptors"
+    compile "org.grails:grails-plugin-services"
+    compile "org.grails:grails-plugin-datasource"
+    compile "org.grails:grails-plugin-databinding"
+    compile "org.grails:grails-plugin-async"
     compile "org.grails:grails-web-boot"
-
-    compile "org.grails.plugins:hibernate"
-    compile "org.grails.plugins:cache"
+    compile "org.grails:grails-logging"
     compile "org.hibernate:hibernate-ehcache"
-
-    runtime "org.grails.plugins:asset-pipeline"
-    runtime "org.grails.plugins:scaffolding"
-
+    compile "org.grails.plugins:cache"
+    compile "org.grails.plugins:views-json"
+    runtime "com.h2database:h2"
     testCompile "org.grails:grails-plugin-testing"
     testCompile "org.grails.plugins:geb"
-
-    // Note: It is recommended to update to a more robust driver (Chrome, Firefox etc.)
-    testRuntime 'org.seleniumhq.selenium:selenium-htmlunit-driver:2.44.0'
-
-    console "org.grails:grails-console"
 }
 
 task wrapper(type: Wrapper) {
