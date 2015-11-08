@@ -1,4 +1,0 @@
-json {
-    error 500
-    message "Internal server error"
-}

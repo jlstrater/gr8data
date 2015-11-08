@@ -1,14 +1,17 @@
 class UrlMappings {
 
     static mappings = {
-        "/$controller/$action?/$id?(.$format)?"{
-            constraints {
-                // apply constraints here
-            }
+        "/companies"(resources:"company") {
+            "/stats"(resources: "genderStats")
         }
 
-        "/"(controller: 'application', 'index')
-        "500"(view: '/application/serverError')
-        "404"(view: '/application/notFound')
+        "/v1/hello"(controller:"hello", namespace: "v1")
+        "/v2/hello"(controller:"hello", namespace: "v2")
+
+        "/aggregate"(controller: "aggregateStats", action: "index", readOnly: true)
+
+        "/"(controller: "index")
+        "500"(controller: "InternalServerError")
+        "404"(controller: "NotFound")
     }
 }

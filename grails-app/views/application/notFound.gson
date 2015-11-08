@@ -1,4 +1,0 @@
-json {
-	message "Not Found"
-	error 404
-}
