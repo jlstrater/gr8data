@@ -12,7 +12,7 @@ The data is bootstrapped from the gr8ladies-d3 repository on startup.
   
   `grails> run-app`
   
-Internet is required to bootstrap data!!!
+An internet connection is required to bootstrap data!!!
 
 ##Endpoints
 
@@ -29,7 +29,7 @@ returns in a format like:
   
 ####/companies/$companyId/stats
 
-stats for the company queried
+stats for the company specified by id
 
     {
       "company": "Object Partners, Inc.",
