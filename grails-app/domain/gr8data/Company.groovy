@@ -13,7 +13,5 @@ class Company {
     }
 
     static mappings = {
-        country cascade:all
-        stats cascade:all
     }
 }
