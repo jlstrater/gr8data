@@ -4,7 +4,7 @@ In progress API for Gr8Ladies Data Project
 
 See the charts and contribute at http://jlstrater.github.io/gr8ladies-d3/
 
-The data is bootstrapped from the gr8ladies-d3 repository on startup.
+Looking for the demo from the devoxx presentation? See the [Devoxx Version](https://github.com/jlstrater/gr8data/releases/tag/1.0)
 
 ##Run: 
 
@@ -12,7 +12,7 @@ The data is bootstrapped from the gr8ladies-d3 repository on startup.
   
   `grails> run-app`
   
-An internet connection is required to bootstrap data!!!
+  The data is bootstrapped from the gr8ladies-d3 repository on startup. An internet connection is required in order to bootstrap data!!!
 
 ##Endpoints
 
