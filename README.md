@@ -58,7 +58,7 @@ aggregate data for all companies
           "numberOfWomen": 11,
           "numberOfMen": 37,
           "percentageWomen": 22.9
-      }
+        }
       },
       {
         "Developers": {
