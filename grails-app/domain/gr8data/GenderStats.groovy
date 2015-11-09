@@ -12,16 +12,13 @@ class GenderStats {
         numberOfWomen nullable: true
     }
 
+    def calculationsService
+
     Integer getTotal() {
         (numberOfMen ?: 0) + (numberOfWomen ?: 0)
     }
 
     Double getPercentageWomen() {
-        ratio(numberOfWomen, total)
-    }
-
-    Double ratio(numerator, denominator){
-        if(!numerator && !denominator) return 0.0
-        ((numerator ?: 0.0).div(denominator) * 100).toDouble().round(1)
+        calculationsService.percentage(numberOfWomen, total)
     }
 }

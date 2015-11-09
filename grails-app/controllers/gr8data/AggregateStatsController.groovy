@@ -1,11 +1,13 @@
 package gr8data
 
-class AggregateStatsController {
-    def index() {
-        List<GenderStats> stats = GenderStats.findAll()
+import grails.converters.JSON
 
-        def statNames = stats.name.unique()
-        statNames.each {
-        }
+class AggregateStatsController {
+    static allowedMethods = [index: 'GET']
+
+    AggregateDataService aggregateDataService
+
+    def index() {
+        render aggregateDataService.getAllAggregates() as JSON
     }
 }

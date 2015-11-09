@@ -7,12 +7,6 @@ import spock.lang.Unroll
 @TestFor(GenderStats)
 class GenderStatsSpec extends Specification {
 
-    def setup() {
-    }
-
-    def cleanup() {
-    }
-
     @Unroll
     void "test totalEmployees for inputs #totalWomen and #totalMen"() {
         given:
@@ -25,15 +19,14 @@ class GenderStatsSpec extends Specification {
         GenderStats stat = new GenderStats(name: 'test', numberOfMen: totalMen, numberOfWomen: totalWomen, company: company)
 
         expect:
-        stat.total == expectedTotal
-        stat.percentageWomen == expectedPercentage
+        stat.total == total
 
         where:
-        totalWomen | totalMen | expectedTotal | expectedPercentage
-        ''         | ''       | 0             | 0
-        0          | 10       | 10            | 0
-        10         | 0        | 10            | 100
-        5          | 5        | 10            | 50
-        2          | 4        | 6             | 33.3
+        totalWomen | totalMen | total
+        ''         | ''       | 0
+        0          | 10       | 10
+        10         | 0        | 10
+        5          | 5        | 10
+        2          | 4        | 6
     }
 }
