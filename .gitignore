@@ -1,7 +1,0 @@
-.idea
-*.iml
-.gradle
-build
-classes/
-*.ipr
-*.iws
