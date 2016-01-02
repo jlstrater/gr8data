@@ -23,10 +23,10 @@ group "gr8data"
 
 apply plugin: "spring-boot"
 apply plugin: "war"
-apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: "org.grails.grails-web"
 apply plugin: 'org.asciidoctor.convert'
+apply plugin: 'codenarc'
 
 ext {
     grailsVersion = project.grailsVersion
@@ -99,4 +99,26 @@ task publish(type: GradleBuild) {
     dependsOn asciidoctor
     buildFile = 'publish.gradle'
     tasks = ['publishGhPages']
+}
+
+codenarc {
+    toolVersion = '0.24.1'
+}
+
+codenarcMain {
+    ignoreFailures false
+    configFile file('config/codenarc/codenarc.groovy')
+
+    maxPriority1Violations 0
+    maxPriority2Violations 10
+    maxPriority3Violations 20
+}
+
+codenarcTest {
+    ignoreFailures true
+    configFile file('config/codenarc/codenarcTest.groovy')
+
+    maxPriority1Violations 0
+    maxPriority2Violations 10
+    maxPriority3Violations 20
 }
