@@ -10,6 +10,7 @@ buildscript {
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath "org.grails.plugins:hibernate:4.3.10.5"
+        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'
     }
 }
 
@@ -25,6 +26,7 @@ apply plugin: "war"
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: "org.grails.grails-web"
+apply plugin: 'org.asciidoctor.convert'
 
 ext {
     grailsVersion = project.grailsVersion
@@ -57,7 +59,6 @@ dependencies {
     compile "org.grails:grails-plugin-async"
     compile "org.grails:grails-web-boot"
     compile "org.grails:grails-logging"
-    compile "io.springfox:springfox-swagger2:2.2.2"
 
     compile "org.grails.plugins:hibernate"
     compile "org.grails.plugins:cache"
@@ -73,4 +74,29 @@ dependencies {
 
 task wrapper(type: Wrapper) {
     gradleVersion = gradleWrapperVersion
+}
+
+asciidoctor {
+    dependsOn test
+    separateOutputDirs = false
+    sourceDir = file('src/docs')
+    backends 'html5'
+    outputDir new File(buildDir, 'docs')
+    attributes	'build-gradle': file('build.gradle'),
+            'endpoint-url': 'http://example.org',
+
+            'source-highlighter' : 'prettify',
+            'imagesdir':'images',
+            'toc':'left',
+            'icons': 'font',
+            'setanchors':'true',
+            'idprefix':'',
+            'idseparator':'-',
+            'docinfo1':'true'
+}
+
+task publish(type: GradleBuild) {
+    dependsOn asciidoctor
+    buildFile = 'publish.gradle'
+    tasks = ['publishGhPages']
 }
