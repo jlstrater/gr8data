@@ -1,7 +1,6 @@
 package gr8data
 
-
-import grails.rest.*
+import grails.rest.Resource
 
 @Resource(uri='/countries', readOnly = false, formats = ['json', 'xml'])
 class Country {

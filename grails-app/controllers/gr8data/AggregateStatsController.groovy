@@ -8,6 +8,6 @@ class AggregateStatsController {
     AggregateDataService aggregateDataService
 
     def index() {
-        render aggregateDataService.getAllAggregates() as JSON
+        render aggregateDataService.allAggregates as JSON
     }
 }

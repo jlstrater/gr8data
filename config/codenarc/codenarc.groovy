@@ -61,7 +61,7 @@ ruleset {
     ThrowExceptionFromFinallyBlock
 
     // rulesets/braces.xml
-    ElseBlockBraces(bracesRequiredForElseIf:true)
+    ElseBlockBraces(bracesRequiredForElseIf: true)
     ForStatementBraces
     IfStatementBraces
     WhileStatementBraces
@@ -101,7 +101,7 @@ ruleset {
     IfStatementCouldBeTernary
     InvertedIfElse
     LongLiteralWithLowerCaseL
-    NoDef
+//    NoDef
     ParameterReassignment
     TernaryCouldBeElvis
     VectorIsObsolete
@@ -204,8 +204,8 @@ ruleset {
     StatelessClass
 
     // rulesets/grails.xml
-    GrailsDomainHasEquals
-    GrailsDomainHasToString
+//    GrailsDomainHasEquals
+//    GrailsDomainHasToString
     GrailsDomainReservedSqlKeywordName
     GrailsDomainWithServiceReference
     GrailsDuplicateConstraint

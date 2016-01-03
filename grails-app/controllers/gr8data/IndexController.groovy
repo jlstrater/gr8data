@@ -9,12 +9,12 @@ class IndexController {
 
     def index() {
         render(contentType: 'application/json') {
-            message = "Welcome to Grails!"
+            message = 'Welcome to Grails!'
             environment = Environment.current.name
             appversion = grailsApplication.metadata['info.app.version']
             grailsversion = grailsApplication.metadata['info.app.grailsVersion']
             appprofile = grailsApplication.config.grails?.profile
-            groovyversion = GroovySystem.getVersion()
+            groovyversion = GroovySystem.version
             jvmversion = System.getProperty('java.version')
             controllers = array {
                 for (c in grailsApplication.controllerClasses) {

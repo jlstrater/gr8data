@@ -16,7 +16,8 @@ class GenderStatsSpec extends Specification {
                 source: 'test data',
                 country: country
         )
-        GenderStats stat = new GenderStats(name: 'test', numberOfMen: totalMen, numberOfWomen: totalWomen, company: company)
+        GenderStats stat = new GenderStats(name: 'test', numberOfMen: totalMen, numberOfWomen: totalWomen,
+                company: company)
 
         expect:
         stat.total == total

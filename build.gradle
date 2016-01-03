@@ -108,17 +108,9 @@ codenarc {
 codenarcMain {
     ignoreFailures false
     configFile file('config/codenarc/codenarc.groovy')
-
-    maxPriority1Violations 0
-    maxPriority2Violations 10
-    maxPriority3Violations 20
 }
 
 codenarcTest {
     ignoreFailures true
     configFile file('config/codenarc/codenarcTest.groovy')
-
-    maxPriority1Violations 0
-    maxPriority2Violations 10
-    maxPriority3Violations 20
 }

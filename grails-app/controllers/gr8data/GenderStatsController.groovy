@@ -1,7 +1,6 @@
 package gr8data
 
-import grails.rest.*
-import grails.converters.*
+import grails.converters.JSON
 
 class GenderStatsController {
 

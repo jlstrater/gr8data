@@ -1,8 +1,6 @@
 package gr8data
 
-
-import grails.rest.*
-import grails.converters.*
+import grails.rest.RestfulController
 
 class CompanyController extends RestfulController {
     static responseFormats = ['json']

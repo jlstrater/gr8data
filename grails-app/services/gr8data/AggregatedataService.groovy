@@ -4,6 +4,7 @@ class AggregateDataService {
 
     CalculationsService calculationsService
 
+    @SuppressWarnings('GStringAsMapKey')
     def getAllAggregates() {
         List<GenderStats> stats = GenderStats.findAll()
 
@@ -12,12 +13,8 @@ class AggregateDataService {
             Integer total = stats.findAll { it.name == name }.total.sum()
             Integer numberOfWomen = stats.findAll { it.name == name }.numberOfWomen.sum()
             Integer numberOfMen = stats.findAll { it.name == name }.numberOfMen.sum()
-            ["${name}": [
-                'total'          : total,
-                'numberOfWomen'  : numberOfWomen,
-                'numberOfMen'    : numberOfMen,
-                'percentageWomen': calculationsService.percentage(numberOfWomen, total)
-            ]]
+            ["${name}": [ 'total': total, 'numberOfWomen': numberOfWomen, 'numberOfMen': numberOfMen,
+                          'percentageWomen': calculationsService.percentage(numberOfWomen, total)]]
         }
         sums
     }

@@ -1,5 +1,6 @@
 package gr8data
 
+@SuppressWarnings('DuplicateMapLiteral')
 class GenderStats {
     String name
     Integer numberOfMen
@@ -12,13 +13,11 @@ class GenderStats {
         numberOfWomen nullable: true
     }
 
-    def calculationsService
-
     Integer getTotal() {
         (numberOfMen ?: 0) + (numberOfWomen ?: 0)
     }
 
     Double getPercentageWomen() {
-        calculationsService.percentage(numberOfWomen, total)
+        CalculationsService.percentage(numberOfWomen, total)
     }
 }
