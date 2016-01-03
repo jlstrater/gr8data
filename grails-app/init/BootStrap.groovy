@@ -19,8 +19,9 @@ class BootStrap {
 
     private void readAndReformatStatsFromFile() {
         if (!Company.count()) {
-            def jsonValues = new JsonSlurper().parseText('https://raw.githubusercontent.com/jlstrater/gr8ladies-d3/' +
-                    'master/src/assets/data/data.json'.toURL().text)
+            def jsonValues = new JsonSlurper().parseText(
+                    'https://raw.githubusercontent.com/jlstrater/gr8ladies-d3/master/src/assets/data/data.json'.toURL()
+                            .text)
             jsonValues.each {
                 Country country = Country.findByAbbreviation(it.country) ?: Country.findByName(it.country)
                 //TODO determine new country from name or pre-seed data

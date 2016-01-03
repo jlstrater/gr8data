@@ -9,7 +9,7 @@ class UrlMappings {
         '/v1/hello'(controller: 'hello', namespace: 'v1')
         '/v2/hello'(controller: 'hello', namespace: 'v2')
 
-        '/aggregate'(controller: 'aggregateStats', action: 'index', readOnly: true)
+        '/aggregates'(controller: 'aggregateStats', action: 'index', readOnly: true)
 
         '/'(controller: 'index')
         '500'(controller: 'InternalServerError')
