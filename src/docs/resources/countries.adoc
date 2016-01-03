@@ -1,0 +1,22 @@
+[[resources-countries]]
+== Countries
+
+The countries resource is a list of countries available to use in the company resource. This is a read only resource.
+
+
+[[resources-countries-list]]
+=== Listing countries
+
+A `GET` request will list all of the countries.
+
+==== Response structure
+
+include::{snippets}/countries-list-example/response-fields.adoc[]
+
+==== Example request
+
+include::{snippets}/countries-list-example/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/countries-list-example/http-response.adoc[]

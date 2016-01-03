@@ -12,8 +12,7 @@ apply plugin: 'org.ajoberstar.github-pages'
 
 githubPages {
     repoUri = 'git@github.com:jlstrater/gr8data.git'
-    targetBranch = 'gh-pages'
     pages {
-        from('build/docs')
+        from(file('build/docs'))
     }
 }

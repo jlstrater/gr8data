@@ -83,8 +83,7 @@ asciidoctor {
     backends 'html5'
     outputDir new File(buildDir, 'docs')
     attributes	'build-gradle': file('build.gradle'),
-            'endpoint-url': 'http://example.org',
-
+            'endpoint-url': 'http://api.gr8ladies.org',
             'source-highlighter' : 'prettify',
             'imagesdir':'images',
             'toc':'left',
@@ -97,7 +96,7 @@ asciidoctor {
 
 task publish(type: GradleBuild) {
     dependsOn asciidoctor
-    buildFile = 'publish.gradle'
+    buildFile = file('publish.gradle')
     tasks = ['publishGhPages']
 }
 

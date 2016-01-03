@@ -1,0 +1,97 @@
+
+[[resources-companies]]
+== Companies
+
+The companies resource describes the companies that have contributed data. To contribute to this project,
+see [resources-companies-create](Submitting Company Data)
+
+[[resources-companies-list]]
+=== Listing companies
+
+A `GET` request will list all of the companies.
+
+==== Response structure
+
+include::{snippets}/companies-list-example/response-fields.adoc[]
+
+==== Example request
+
+include::{snippets}/companies-list-example/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/companies-list-example/http-response.adoc[]
+
+[[resources-companies-create]]
+=== Submitting Company Data
+
+A `POST` request is used to create new company data
+
+==== Request structure
+
+include::{snippets}/companies-create-example/request-fields.adoc[]
+
+==== Example request
+
+include::{snippets}/companies-create-example/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/companies-create-example/http-response.adoc[]
+
+
+[[resources-company]]
+== Company
+
+The Company resource is used to retrieve, update, and delete individual company data
+
+[[resources-company-retrieve]]
+=== Retrieve A Company Resource
+
+A `GET` request will retrieve the details of a company
+
+==== Response structure
+
+include::{snippets}/company-get-example/response-fields.adoc[]
+
+==== Example request
+
+include::{snippets}/company-get-example/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/company-get-example/http-response.adoc[]
+
+
+[[resources-company-update]]
+=== Update A Company Resource
+
+A `PUT` request is used to update all of the company's data fields
+
+==== Request structure
+
+include::{snippets}/company-update-example/request-fields.adoc[]
+
+==== Example request
+
+include::{snippets}/company-update-example/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/company-update-example/http-response.adoc[]
+
+A `PATCH` request for partial updates to a company's data
+
+==== Request structure
+
+include::{snippets}/company-partial-update-example/request-fields.adoc[]
+
+Only include the fields that need to be updated.
+
+==== Example request
+
+include::{snippets}/company-partial-update-example/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/company-partial-update-example/http-response.adoc[]
