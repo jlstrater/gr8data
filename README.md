@@ -7,7 +7,7 @@ See the charts and contribute at http://jlstrater.github.io/gr8ladies-d3/
 Looking for the demo from the devoxx presentation? See the [Devoxx Version](https://github.com/jlstrater/gr8data/releases/tag/1.0)
 
 ##Documentation
-Docs has moved to [jlstrater.github.io/gr8data](jlstrater.github.io/gr8data). As with most projects, it's a work in progress.
+Docs has moved to [https://jlstrater.github.io/gr8data](https://jlstrater.github.io/gr8data). As with most projects, it's a work in progress.
 
 ##Run Example Locally
 
