@@ -1,5 +1,6 @@
-package gr8data
+package gr8data.services
 
+import gr8data.CalculationsService
 import grails.test.mixin.TestFor
 import spock.lang.Specification
 import spock.lang.Unroll

@@ -68,6 +68,7 @@ dependencies {
 
     testCompile "org.grails:grails-plugin-testing"
     testCompile "org.grails.plugins:geb"
+    testCompile 'org.springframework.restdocs:spring-restdocs-restassured:1.1.0.M1'
 
     console "org.grails:grails-console"
 }
@@ -76,14 +77,19 @@ task wrapper(type: Wrapper) {
     gradleVersion = gradleWrapperVersion
 }
 
+ext {
+    snippetsDir = file('src/docs/generated-snippets')
+}
+
+test {
+    outputs.dir snippetsDir
+}
+
 asciidoctor {
     dependsOn test
-    separateOutputDirs = false
+    inputs.dir snippetsDir
     sourceDir = file('src/docs')
-    backends 'html5'
-    outputDir new File(buildDir, 'docs')
-    attributes	'build-gradle': file('build.gradle'),
-            'endpoint-url': 'http://api.gr8ladies.org',
+    attributes 'snippets': snippetsDir,
             'source-highlighter' : 'prettify',
             'imagesdir':'images',
             'toc':'left',
@@ -94,10 +100,22 @@ asciidoctor {
             'docinfo1':'true'
 }
 
-task publish(type: GradleBuild) {
+task cleanTempDir(type: Delete) {
+    delete fileTree(dir: 'src/docs/generated-snippets')
+}
+
+task publishDocs(type: GradleBuild) {
     dependsOn asciidoctor
     buildFile = file('publish.gradle')
     tasks = ['publishGhPages']
+}
+
+clean {
+    dependsOn cleanTempDir
+}
+
+build {
+    dependsOn asciidoctor
 }
 
 codenarc {

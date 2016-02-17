@@ -1,5 +1,8 @@
-package gr8data
+package gr8data.services
 
+import gr8data.Company
+import gr8data.Country
+import gr8data.GenderStats
 import grails.test.mixin.TestFor
 import spock.lang.Specification
 import spock.lang.Unroll

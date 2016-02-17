@@ -5,3 +5,5 @@ build
 classes/
 *.ipr
 *.iws
+
+src/docs/generated-snippets

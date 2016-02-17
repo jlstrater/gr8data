@@ -56,18 +56,35 @@ class BootStrap {
     }
 
     def init = { servletContext ->
+        environments {
+            dev {
+                addCountries()
 
-        addCountries()
+                readAndReformatStatsFromFile()
 
-        readAndReformatStatsFromFile()
+                JSON.registerObjectMarshaller(Country) {
+                    [id: it.id, name: it.name, abbreviation: it.abbreviation, continent: it.continent]
+                }
 
-        JSON.registerObjectMarshaller(Country) {
-            [id: it.id, name: it.name, abbreviation: it.abbreviation, continent: it.continent]
-        }
+                JSON.registerObjectMarshaller(GenderStats) {
+                    [company: it.company.name, name: it.name, total: it.total, percentageWomen: it.percentageWomen,
+                     numberOfWomen: it?.numberOfWomen, numberOfMen: it?.numberOfMen]
+                }
+            }
+            test {
+                addCountries()
 
-        JSON.registerObjectMarshaller(GenderStats) {
-            [company: it.company.name, name: it.name, total: it.total, percentageWomen: it.percentageWomen,
-                    numberOfWomen: it?.numberOfWomen, numberOfMen: it?.numberOfMen]
+                readAndReformatStatsFromFile()
+
+                JSON.registerObjectMarshaller(Country) {
+                    [id: it.id, name: it.name, abbreviation: it.abbreviation, continent: it.continent]
+                }
+
+                JSON.registerObjectMarshaller(GenderStats) {
+                    [company: it.company.name, name: it.name, total: it.total, percentageWomen: it.percentageWomen,
+                     numberOfWomen: it?.numberOfWomen, numberOfMen: it?.numberOfMen]
+                }
+            }
         }
     }
     def destroy = {
