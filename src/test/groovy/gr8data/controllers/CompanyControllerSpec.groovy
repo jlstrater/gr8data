@@ -1,4 +1,4 @@
-package gr8data
+package gr8data.controllers
 
 import static com.jayway.restassured.RestAssured.given
 import static org.hamcrest.CoreMatchers.is
@@ -17,12 +17,10 @@ import com.jayway.restassured.specification.RequestSpecification
 import grails.test.mixin.integration.Integration
 import grails.transaction.Rollback
 
-import org.springframework.boot.test.SpringApplicationConfiguration
 import org.springframework.restdocs.ManualRestDocumentation
 
 import spock.lang.Specification
 
-@SpringApplicationConfiguration(classes=Application)
 @Integration
 @Rollback
 class CompanyControllerSpec extends Specification {
@@ -41,7 +39,8 @@ class CompanyControllerSpec extends Specification {
         this.restDocumentation.afterTest()
     }
 
-    void 'companies list empty'() {
+    void 'companies list with bootstrapped data'() {
+
         when:
         def results = given(this.documentationSpec)
                 .accept('application/json')
@@ -54,13 +53,13 @@ class CompanyControllerSpec extends Specification {
                         fieldWithPath('[].id').description('The id for the company'),
                         fieldWithPath('[].name').description("The company's name"),
                         fieldWithPath('[].country').description('The full name of the country where the' +
-                                ' company is located')
-                        )))
+                                ' company is located'))))
                 .when()
                 .port(8080)
                 .get('/companies')
                 .then()
-                .assertThat().statusCode(is(200))
+                .assertThat()
+                .statusCode(is(200))
         then:
         results
     }

@@ -4,7 +4,6 @@ import gr8data.GenderStats
 import grails.converters.JSON
 import groovy.json.JsonSlurper
 
-@SuppressWarnings('DuplicateStringLiteral')
 class BootStrap {
 
     private void addCountries() {
@@ -55,6 +54,13 @@ class BootStrap {
         }
     }
 
+    private void seedTestData() {
+        Country usa = new Country(name: 'United States of America', abbreviation: 'USA', continent: 'North America')
+            usa.save()
+        Company company1 = new Company(name: 'Test Company One', source: 'Test Data', country: usa)
+            company1.save()
+    }
+
     def init = { servletContext ->
         environments {
             dev {
@@ -72,18 +78,7 @@ class BootStrap {
                 }
             }
             test {
-                addCountries()
-
-                readAndReformatStatsFromFile()
-
-                JSON.registerObjectMarshaller(Country) {
-                    [id: it.id, name: it.name, abbreviation: it.abbreviation, continent: it.continent]
-                }
-
-                JSON.registerObjectMarshaller(GenderStats) {
-                    [company: it.company.name, name: it.name, total: it.total, percentageWomen: it.percentageWomen,
-                     numberOfWomen: it?.numberOfWomen, numberOfMen: it?.numberOfMen]
-                }
+                seedTestData()
             }
         }
     }

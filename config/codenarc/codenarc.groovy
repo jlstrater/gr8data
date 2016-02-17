@@ -131,10 +131,10 @@ ruleset {
     ToStringReturnsNull
 
     // rulesets/dry.xml
-    DuplicateListLiteral
-    DuplicateMapLiteral
-    DuplicateNumberLiteral
-    DuplicateStringLiteral
+//    DuplicateListLiteral
+//    DuplicateMapLiteral
+//    DuplicateNumberLiteral
+//    DuplicateStringLiteral
 
     // rulesets/enhanced.xml
 //    CloneWithoutCloneable
