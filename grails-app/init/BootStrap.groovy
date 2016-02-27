@@ -48,8 +48,8 @@ class BootStrap {
                     GenderStats qa = new GenderStats(name: 'QA', numberOfMen: it?.qaMen, numberOfWomen: it?.qaWomen,
                             company: company).save()
                     company.addToStats(qa)
-                    company.save()
                 }
+                company.save()
             }
         }
     }
@@ -59,6 +59,24 @@ class BootStrap {
             usa.save()
         Company company1 = new Company(name: 'Test Company One', source: 'Test Data', country: usa)
             company1.save()
+
+        GenderStats total = new GenderStats(name: 'Total', numberOfMen: 11,
+                    numberOfWomen: 3, company: company1).save()
+            company1.addToStats(total)
+
+        GenderStats leadership = new GenderStats(name: 'Leadership', numberOfMen: 5,
+                    numberOfWomen: 1, company: company1).save()
+        company1.addToStats(leadership)
+
+        GenderStats devs = new GenderStats(name: 'Developers', numberOfMen: 5,
+                numberOfWomen: 1, company: company1).save()
+        company1.addToStats(devs)
+
+        GenderStats qa = new GenderStats(name: 'QA', numberOfMen: 1, numberOfWomen: 1,
+                    company: company1).save()
+        company1.addToStats(qa)
+
+        company1.save()
     }
 
     def init = { servletContext ->

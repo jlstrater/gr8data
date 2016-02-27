@@ -2,8 +2,7 @@
 [[resources-companies]]
 == Companies
 
-The companies resource describes the companies that have contributed data. To contribute to this project,
-see [resources-companies-create](Submitting Company Data)
+The companies resource describes the companies that have contributed data.
 
 [[resources-companies-list]]
 === Listing companies
@@ -52,15 +51,15 @@ A `GET` request will retrieve the details of a company
 
 ==== Response structure
 
-include::{snippets}/company-get-example/response-fields.adoc[]
+include::{snippets}/companies-get-example/response-fields.adoc[]
 
 ==== Example request
 
-include::{snippets}/company-get-example/curl-request.adoc[]
+include::{snippets}/companies-get-example/curl-request.adoc[]
 
 ==== Example response
 
-include::{snippets}/company-get-example/http-response.adoc[]
+include::{snippets}/companies-get-example/http-response.adoc[]
 
 
 [[resources-company-update]]

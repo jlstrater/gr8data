@@ -84,8 +84,8 @@ that describes the problem. The error object has the following structure:
 
 include::{snippets}/error-example/response-fields.adoc[]
 
-For example, a request that attempts to apply a non-existent tag to a note will produce a
-`400 Bad Request` response:
+For example, an attempt to post a new company without the appropriate fields will produce a `422 Unprocessable Entity`
+response:
 
 include::{snippets}/error-example/http-response.adoc[]
 
