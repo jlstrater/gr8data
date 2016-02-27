@@ -443,8 +443,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="resources-companies">Companies</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The companies resource describes the companies that have contributed data. To contribute to this project,
-see [resources-companies-create](Submitting Company Data)</p>
+<p>The companies resource describes the companies that have contributed data.</p>
 </div>
 <div class="sect2">
 <h3 id="resources-companies-list">Listing companies</h3>
@@ -502,7 +501,7 @@ Server: Apache-Coyote/1.1
 X-Application-Context: application:test
 Content-Type: application/json;charset=ISO-8859-1
 Transfer-Encoding: chunked
-Date: Wed, 17 Feb 2016 22:20:01 GMT
+Date: Sat, 27 Feb 2016 05:30:45 GMT
 Content-Length: 91
 
 [ {
@@ -553,20 +552,76 @@ Content-Length: 91
 </div>
 <div class="sect3">
 <h4 id="response-structure-2">Response structure</h4>
-<div class="paragraph">
-<p>Unresolved directive in companies.adoc - include::/Users/jstrater/Documents/dev/gr8ladies/gr8data/src/docs/generated-snippets/company-get-example/response-fields.adoc[]</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33%;">
+<col style="width: 33%;">
+<col style="width: 33%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The id for the company</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The company&#8217;s name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">country</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The full name of the country where the company is located</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">source</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A short note about the data submitted(i.e I worked there or the website url if the employees are publicly listed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdated</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The date time stamp in UTC when the data was updated</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="example-request-3">Example request</h4>
-<div class="paragraph">
-<p>Unresolved directive in companies.adoc - include::/Users/jstrater/Documents/dev/gr8ladies/gr8data/src/docs/generated-snippets/company-get-example/curl-request.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-bash" data-lang="bash">$ curl 'http://api.gr8ladies.org/companies/1' -i -H 'Accept: application/json'</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="example-response-3">Example response</h4>
-<div class="paragraph">
-<p>Unresolved directive in companies.adoc - include::/Users/jstrater/Documents/dev/gr8ladies/gr8data/src/docs/generated-snippets/company-get-example/http-response.adoc[]</p>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Application-Context: application:test
+Content-Type: application/json;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Sat, 27 Feb 2016 05:30:45 GMT
+Content-Length: 159
+
+{
+  "id" : 1,
+  "name" : "Test Company One",
+  "country" : "United States of America",
+  "source" : "Test Data",
+  "lastUpdated" : "2016-02-27T05:30:44+0000"
+}</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -623,7 +678,7 @@ Content-Length: 91
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-01-03 11:39:00 CST
+Last updated 2016-02-26 23:35:11 CST
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">

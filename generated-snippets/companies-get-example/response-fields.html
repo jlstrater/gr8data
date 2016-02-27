@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.3">
-<title>Aggregate Data</title>
+<title>Untitled</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -422,30 +422,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="header">
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#resources-aggregates">Aggregate Data</a>
-<ul class="sectlevel2">
-<li><a href="#resources-aggregate-list">Listing aggregates</a></li>
-</ul>
-</li>
-</ul>
+
 </div>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="resources-aggregates">Aggregate Data</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The aggregates resource is a list of statistics available. This is a read only resource and computed when new data is
-added.</p>
-</div>
-<div class="sect2">
-<h3 id="resources-aggregate-list">Listing aggregates</h3>
-<div class="paragraph">
-<p>A <code>GET</code> request will list all of the data.</p>
-</div>
-<div class="sect3">
-<h4 id="response-structure">Response structure</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 33%;">
@@ -461,107 +441,36 @@ added.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[].Total</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Aggregates for the reported total number of employees.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[].Total.total</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The total of all reported employees.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The id for the company</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[].Total.numberOfWomen</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The total of all reported employees who identify as a woman.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The company&#8217;s name</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[].Total.numberOfMen</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The total of all reported employees who identify as a man.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">country</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The full name of the country where the company is located</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[].Total.percentageWomen</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The calculated percentage of all reported employees who identify as a woman.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">source</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A short note about the data submitted(i.e I worked there or the website url if the employees are publicly listed</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[].Leadership</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The aggregate of all reported employees who manager other employees.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[].Developers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The aggregate of all reported employees who identify as developers, engineers, devops, or other similar titles.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[].QA</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Object</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The aggregate of all reported employees who identify as QA including manual QA and software engineers in test.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdated</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The date time stamp in UTC when the data was updated</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="sect3">
-<h4 id="example-request">Example request</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-bash" data-lang="bash">$ curl 'http://api.gr8ladies.org/aggregates' -i -H 'Accept: application/json'</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="example-response">Example response</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Server: Apache-Coyote/1.1
-X-Application-Context: application:test
-Content-Type: application/json;charset=UTF-8
-Transfer-Encoding: chunked
-Date: Sat, 27 Feb 2016 05:30:45 GMT
-Content-Length: 479
-
-[ {
-  "Total" : {
-    "total" : 14,
-    "numberOfWomen" : 3,
-    "numberOfMen" : 11,
-    "percentageWomen" : 21.4
-  }
-}, {
-  "Leadership" : {
-    "total" : 6,
-    "numberOfWomen" : 1,
-    "numberOfMen" : 5,
-    "percentageWomen" : 16.7
-  }
-}, {
-  "Developers" : {
-    "total" : 6,
-    "numberOfWomen" : 1,
-    "numberOfMen" : 5,
-    "percentageWomen" : 16.7
-  }
-}, {
-  "QA" : {
-    "total" : 2,
-    "numberOfWomen" : 1,
-    "numberOfMen" : 1,
-    "percentageWomen" : 50.0
-  }
-} ]</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-01-03 11:36:27 CST
+Last updated 2016-02-26 23:30:46 CST
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
