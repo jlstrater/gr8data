@@ -1,11 +1,11 @@
 package gr8data.controllers
 
+import static org.springframework.restdocs.restassured.RestAssuredRestDocumentation.documentationConfiguration
+
 import com.jayway.restassured.builder.RequestSpecBuilder
 import com.jayway.restassured.specification.RequestSpecification
 import org.springframework.restdocs.ManualRestDocumentation
 import spock.lang.Specification
-
-import static org.springframework.restdocs.restassured.RestAssuredRestDocumentation.documentationConfiguration
 
 class AbstractControllerSpec extends Specification {
 

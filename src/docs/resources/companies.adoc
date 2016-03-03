@@ -44,7 +44,7 @@ include::{snippets}/companies-create-example/http-response.adoc[]
 
 The Company resource is used to retrieve, update, and delete individual company data
 
-[[resources-company-retrieve]]
+[[resources-companies-retrieve]]
 === Retrieve A Company Resource
 
 A `GET` request will retrieve the details of a company
@@ -62,35 +62,39 @@ include::{snippets}/companies-get-example/curl-request.adoc[]
 include::{snippets}/companies-get-example/http-response.adoc[]
 
 
-[[resources-company-update]]
+[[resources-companies-update]]
 === Update A Company Resource
+
+==== Full Update
 
 A `PUT` request is used to update all of the company's data fields
 
-==== Request structure
+===== Request structure
 
-include::{snippets}/company-update-example/request-fields.adoc[]
+include::{snippets}/companies-update-example/request-fields.adoc[]
 
-==== Example request
+===== Example request
 
-include::{snippets}/company-update-example/curl-request.adoc[]
+include::{snippets}/companies-update-example/curl-request.adoc[]
 
-==== Example response
+===== Example response
 
-include::{snippets}/company-update-example/http-response.adoc[]
+include::{snippets}/companies-update-example/http-response.adoc[]
+
+==== Partial Update
 
 A `PATCH` request for partial updates to a company's data
 
-==== Request structure
+===== Request structure
 
-include::{snippets}/company-partial-update-example/request-fields.adoc[]
+include::{snippets}/companies-partial-update-example/request-fields.adoc[]
 
 Only include the fields that need to be updated.
 
-==== Example request
+===== Example request
 
-include::{snippets}/company-partial-update-example/curl-request.adoc[]
+include::{snippets}/companies-partial-update-example/curl-request.adoc[]
 
-==== Example response
+===== Example response
 
-include::{snippets}/company-partial-update-example/http-response.adoc[]
+include::{snippets}/companies-partial-update-example/http-response.adoc[]

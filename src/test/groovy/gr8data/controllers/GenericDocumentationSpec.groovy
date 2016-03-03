@@ -22,7 +22,7 @@ class GenericDocumentationSpec extends AbstractControllerSpec {
                 preprocessResponse(prettyPrint()),
                 responseFields(
                         fieldWithPath('errors').description('List of error messages'),
-                        fieldWithPath('errors.[].object').description("The object that generated the error"),
+                        fieldWithPath('errors.[].object').description('The object that generated the error'),
                         fieldWithPath('errors.[].field').description('The field which generated the error'),
                         fieldWithPath('errors.[].rejected-value').description('The value which generated the error'),
                         fieldWithPath('errors.[].message').description('The readable message about the error'))))

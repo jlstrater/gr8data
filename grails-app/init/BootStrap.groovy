@@ -81,7 +81,7 @@ class BootStrap {
 
     def init = { servletContext ->
         environments {
-            dev {
+            development {
                 addCountries()
 
                 readAndReformatStatsFromFile()

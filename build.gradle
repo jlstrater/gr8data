@@ -123,11 +123,9 @@ codenarc {
 }
 
 codenarcMain {
-    ignoreFailures false
     configFile file('config/codenarc/codenarc.groovy')
 }
 
 codenarcTest {
-    ignoreFailures true
     configFile file('config/codenarc/codenarcTest.groovy')
 }

@@ -67,6 +67,9 @@ use of HTTP status codes.
 | `405 Method Not Allowed`
 | The type of request for this resource is not allowed. For example, some endpoints may be GET only.
 Trying a POST will return this message.
+
+| `422 Unprocessable Entity`
+| There was an error in the request. The response body will contain the error message.
 |===
 
 [[overview-headers]]

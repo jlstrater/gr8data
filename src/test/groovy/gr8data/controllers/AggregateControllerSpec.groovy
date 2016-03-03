@@ -1,15 +1,17 @@
 package gr8data.controllers
 
-import grails.test.mixin.integration.Integration
-import grails.transaction.Rollback
-
 import static com.jayway.restassured.RestAssured.given
 import static org.hamcrest.CoreMatchers.is
-import static org.springframework.restdocs.operation.preprocess.Preprocessors.*
+import static org.springframework.restdocs.operation.preprocess.Preprocessors.preprocessRequest
+import static org.springframework.restdocs.operation.preprocess.Preprocessors.preprocessResponse
+import static org.springframework.restdocs.operation.preprocess.Preprocessors.prettyPrint
 import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath
 import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields
 import static org.springframework.restdocs.restassured.RestAssuredRestDocumentation.document
 import static org.springframework.restdocs.restassured.operation.preprocess.RestAssuredPreprocessors.modifyUris
+
+import grails.test.mixin.integration.Integration
+import grails.transaction.Rollback
 
 @Integration
 @Rollback
@@ -27,8 +29,8 @@ class AggregateControllerSpec extends AbstractControllerSpec {
                 responseFields(
                         fieldWithPath('[].Total').description('Aggregates for the reported total number of employees.'),
                         fieldWithPath('[].Total.total').description('The total of all reported employees.'),
-                        fieldWithPath('[].Total.numberOfWomen').description("The total of all reported employees who " +
-                                "identify as a woman."),
+                        fieldWithPath('[].Total.numberOfWomen').description('The total of all reported employees who ' +
+                                'identify as a woman.'),
                         fieldWithPath('[].Total.numberOfMen').description('The total of all reported employees who' +
                                 ' identify as a man.'),
                         fieldWithPath('[].Total.percentageWomen').description('The calculated percentage of all ' +
