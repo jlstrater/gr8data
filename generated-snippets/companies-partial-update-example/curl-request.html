@@ -428,7 +428,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="content">
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-bash" data-lang="bash">$ curl 'http://api.gr8ladies.org/companies/1' -i -H 'Accept: application/json'</code></pre>
+<pre class="prettyprint highlight"><code class="language-bash" data-lang="bash">$ curl 'http://api.gr8ladies.org/companies/1' -i -X PATCH -H 'Accept: application/json' -H 'Content-Type: application/json; charset=UTF-8' -d '{"name":"Updated Company"}'</code></pre>
 </div>
 </div>
 </div>

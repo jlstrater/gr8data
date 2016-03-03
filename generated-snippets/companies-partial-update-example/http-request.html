@@ -428,13 +428,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="content">
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-bash" data-lang="bash">$ curl 'http://api.gr8ladies.org/companies' -i -H 'Accept: application/json'</code></pre>
+<pre class="prettyprint highlight"><code class="language-http" data-lang="http">PATCH /companies/1 HTTP/1.1
+Accept: application/json
+Content-Type: application/json; charset=UTF-8
+Host: api.gr8ladies.org
+Content-Length: 26
+
+{"name":"Updated Company"}</code></pre>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-02-26 22:31:42 CST
+Last updated 2016-03-03 00:59:19 CST
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">

@@ -426,41 +426,30 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div id="content">
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 33%;">
-<col style="width: 33%;">
-<col style="width: 33%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Path</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[].id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The id for the company</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[].name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The company&#8217;s name</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[].country</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The full name of the country where the company is located</p></td>
-</tr>
-</tbody>
-</table>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-http" data-lang="http">HTTP/1.1 201 Created
+Server: Apache-Coyote/1.1
+X-Application-Context: application:test
+Location: http://localhost:8080/companies/2
+Content-Type: application/json;charset=ISO-8859-1
+Transfer-Encoding: chunked
+Date: Thu, 03 Mar 2016 06:59:19 GMT
+Content-Length: 163
+
+{
+  "id" : 2,
+  "name" : "New Company",
+  "country" : "United States of America",
+  "source" : "Documentation Test",
+  "lastUpdated" : "2016-03-03T06:59:19+0000"
+}</code></pre>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-02-26 22:31:42 CST
+Last updated 2016-03-03 00:59:19 CST
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">

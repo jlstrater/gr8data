@@ -428,25 +428,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="content">
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Server: Apache-Coyote/1.1
-X-Application-Context: application:test
-Content-Type: application/json;charset=ISO-8859-1
-Transfer-Encoding: chunked
-Date: Sat, 27 Feb 2016 04:31:42 GMT
-Content-Length: 91
+<pre class="prettyprint highlight"><code class="language-http" data-lang="http">POST /companies HTTP/1.1
+Accept: application/json
+Content-Type: application/json; charset=UTF-8
+Host: api.gr8ladies.org
+Content-Length: 70
 
-[ {
-  "id" : 1,
-  "name" : "Test Company One",
-  "country" : "United States of America"
-} ]</code></pre>
+{"name":"New Company", "country":"USA", "source":"Documentation Test"}</code></pre>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-02-26 22:31:42 CST
+Last updated 2016-03-03 00:59:19 CST
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
