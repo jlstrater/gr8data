@@ -72,12 +72,14 @@ Trying a POST will return this message.
 | There was an error in the request. The response body will contain the error message.
 |===
 
+////
 [[overview-headers]]
 == Headers
 
 Every response has the following header(s):
 
 include::{snippets}/headers-example/response-headers.adoc[]
+////
 
 [[overview-errors]]
 == Errors

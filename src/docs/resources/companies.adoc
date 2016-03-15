@@ -9,10 +9,6 @@ The companies resource describes the companies that have contributed data.
 
 A `GET` request will list all of the companies.
 
-==== Response structure
-
-include::{snippets}/companies-list-example/response-fields.adoc[]
-
 ==== Example request
 
 include::{snippets}/companies-list-example/curl-request.adoc[]
@@ -20,6 +16,10 @@ include::{snippets}/companies-list-example/curl-request.adoc[]
 ==== Example response
 
 include::{snippets}/companies-list-example/http-response.adoc[]
+
+==== Response structure
+
+include::{snippets}/companies-list-example/response-fields.adoc[]
 
 [[resources-companies-create]]
 === Submitting Company Data
@@ -38,6 +38,9 @@ include::{snippets}/companies-create-example/curl-request.adoc[]
 
 include::{snippets}/companies-create-example/http-response.adoc[]
 
+==== Response structure
+
+include::{snippets}/companies-create-example/response-fields.adoc[]
 
 [[resources-company]]
 == Company
@@ -49,10 +52,6 @@ The Company resource is used to retrieve, update, and delete individual company 
 
 A `GET` request will retrieve the details of a company
 
-==== Response structure
-
-include::{snippets}/companies-get-example/response-fields.adoc[]
-
 ==== Example request
 
 include::{snippets}/companies-get-example/curl-request.adoc[]
@@ -61,6 +60,9 @@ include::{snippets}/companies-get-example/curl-request.adoc[]
 
 include::{snippets}/companies-get-example/http-response.adoc[]
 
+==== Response structure
+
+include::{snippets}/companies-get-example/response-fields.adoc[]
 
 [[resources-companies-update]]
 === Update A Company Resource
@@ -81,6 +83,10 @@ include::{snippets}/companies-update-example/curl-request.adoc[]
 
 include::{snippets}/companies-update-example/http-response.adoc[]
 
+===== Response structure
+
+include::{snippets}/companies-update-example/response-fields.adoc[]
+
 ==== Partial Update
 
 A `PATCH` request for partial updates to a company's data
@@ -98,3 +104,7 @@ include::{snippets}/companies-partial-update-example/curl-request.adoc[]
 ===== Example response
 
 include::{snippets}/companies-partial-update-example/http-response.adoc[]
+
+===== Response structure
+
+include::{snippets}/companies-partial-update-example/response-fields.adoc[]

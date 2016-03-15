@@ -9,10 +9,6 @@ The countries resource is a list of countries available to use in the company re
 
 A `GET` request will list all of the countries.
 
-==== Response structure
-
-include::{snippets}/countries-list-example/response-fields.adoc[]
-
 ==== Example request
 
 include::{snippets}/countries-list-example/curl-request.adoc[]
@@ -20,3 +16,24 @@ include::{snippets}/countries-list-example/curl-request.adoc[]
 ==== Example response
 
 include::{snippets}/countries-list-example/http-response.adoc[]
+
+==== Response structure
+
+include::{snippets}/countries-list-example/response-fields.adoc[]
+
+[[resources-countries-retrieve]]
+=== Retrieve an Individual Country
+
+A `GET` request will get the country at the specified id.
+
+==== Example request
+
+include::{snippets}/countries-get-example/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/countries-get-example/http-response.adoc[]
+
+==== Response structure
+
+include::{snippets}/countries-get-example/response-fields.adoc[]
