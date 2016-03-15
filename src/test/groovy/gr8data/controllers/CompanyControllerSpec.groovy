@@ -82,6 +82,12 @@ class CompanyControllerSpec extends AbstractControllerSpec {
                         .host('api.gr8ladies.org')
                         .removePort()),
                 preprocessResponse(prettyPrint()),
+                requestFields(
+                        fieldWithPath('name').description('the name of the company'),
+                        fieldWithPath('country').description('the abbreviation of the country'),
+                        fieldWithPath('source').description('A short note about the data submitted' +
+                                '(i.e I worked there or the website url if the employees are publicly listed')
+                ),
                 responseFields(
                         fieldWithPath('id').description('The id for the company'),
                         fieldWithPath('name').description("The company's name"),
