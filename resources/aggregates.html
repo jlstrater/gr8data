@@ -445,7 +445,59 @@ added.</p>
 <p>A <code>GET</code> request will list all of the data.</p>
 </div>
 <div class="sect3">
-<h4 id="response-structure">Response structure</h4>
+<h4 id="example-request">Example request</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-bash" data-lang="bash">$ curl 'http://api.gr8ladies.org/aggregates' -i -H 'Accept: application/json'</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="example-response">Example response</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+X-Application-Context: application:test
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Tue, 15 Mar 2016 03:07:10 GMT
+Content-Length: 479
+
+[ {
+  "Total" : {
+    "total" : 14,
+    "numberOfWomen" : 3,
+    "numberOfMen" : 11,
+    "percentageWomen" : 21.4
+  }
+}, {
+  "Leadership" : {
+    "total" : 6,
+    "numberOfWomen" : 1,
+    "numberOfMen" : 5,
+    "percentageWomen" : 16.7
+  }
+}, {
+  "Developers" : {
+    "total" : 6,
+    "numberOfWomen" : 1,
+    "numberOfMen" : 5,
+    "percentageWomen" : 16.7
+  }
+}, {
+  "QA" : {
+    "total" : 2,
+    "numberOfWomen" : 1,
+    "numberOfMen" : 1,
+    "percentageWomen" : 50.0
+  }
+} ]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="response-fields">Response fields</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 33%;">
@@ -503,65 +555,13 @@ added.</p>
 </tbody>
 </table>
 </div>
-<div class="sect3">
-<h4 id="example-request">Example request</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-bash" data-lang="bash">$ curl 'http://api.gr8ladies.org/aggregates' -i -H 'Accept: application/json'</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="example-response">Example response</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-http" data-lang="http">HTTP/1.1 200 OK
-Server: Apache-Coyote/1.1
-X-Application-Context: application:test
-Content-Type: application/json;charset=UTF-8
-Transfer-Encoding: chunked
-Date: Thu, 03 Mar 2016 06:59:19 GMT
-Content-Length: 479
-
-[ {
-  "Total" : {
-    "total" : 14,
-    "numberOfWomen" : 3,
-    "numberOfMen" : 11,
-    "percentageWomen" : 21.4
-  }
-}, {
-  "Leadership" : {
-    "total" : 6,
-    "numberOfWomen" : 1,
-    "numberOfMen" : 5,
-    "percentageWomen" : 16.7
-  }
-}, {
-  "Developers" : {
-    "total" : 6,
-    "numberOfWomen" : 1,
-    "numberOfMen" : 5,
-    "percentageWomen" : 16.7
-  }
-}, {
-  "QA" : {
-    "total" : 2,
-    "numberOfWomen" : 1,
-    "numberOfMen" : 1,
-    "percentageWomen" : 50.0
-  }
-} ]</code></pre>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-01-03 11:36:27 CST
+Last updated 2016-03-14 22:07:28 CDT
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
